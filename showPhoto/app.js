@@ -1,7 +1,7 @@
 import { isUserLoggedIn } from "../auth/auth.js";
 
 if (!isUserLoggedIn()) {
-  window.location.href = "https://github.com/DDSCODE3/cameraApp-show-photo/blob/08161945595aae972f13126f4fc13dc7f6056bbc/functions/login-page/index.html";
+  window.location.href = "/cameraApp-show-photo/functions/login-page/index.html";
 }
 
 const baseApiLink =
