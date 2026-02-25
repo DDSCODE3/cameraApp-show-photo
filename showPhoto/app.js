@@ -1,7 +1,7 @@
 import { isUserLoggedIn } from "../auth/auth.js";
 
 if (!isUserLoggedIn()) {
-  window.location.href = "/cameraApp-show-photo/functions/login-page/index.html";
+window.location.href = `${window.location.origin}/cameraApp-show-photo/functions/login-page/index.html`;
 }
 
 const baseApiLink =
