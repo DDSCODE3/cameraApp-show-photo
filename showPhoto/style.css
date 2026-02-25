@@ -1,0 +1,151 @@
+/* ریست */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: linear-gradient(135deg, #f0f2f5, #e4e7eb);
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* عنوان */
+h1 {
+    margin-bottom: 25px;
+    color: #222;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* گالری */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* کارت عکس */
+.photo-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.photo-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* عکس */
+.photo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.08);
+}
+
+/* دکمه حذف */
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 59, 48, 0.9);
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.25s ease;
+    backdrop-filter: blur(5px);
+}
+
+.photo-card:hover .delete-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delete-btn:hover {
+    background: #ff3b30;
+    transform: scale(1.1);
+}
+
+/* لودر مدرن */
+.loader {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top: 5px solid #4a90e2;
+    border-right: 5px solid #4a90e2;
+    animation: spin 0.8s linear infinite;
+    margin: 60px auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* صفحه هیچ عکس */
+.no-photos {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    backdrop-filter: blur(6px);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* مخفی */
+.hidden {
+    display: none !important;
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 15px;
+    }
+
+    .photo-card img {
+        height: 180px;
+    }
+}

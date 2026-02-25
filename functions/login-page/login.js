@@ -36,7 +36,7 @@ const checkUser = (email, password) => {
 
     alert("ورود موفقیت آمیز بود!");
 
-    window.location.href = "../../showPhoto/index.html";
+    window.location.href = "../../index.html";
   } else {
     alert("ایمیل یا رمز عبور اشتباه است.");
   }
